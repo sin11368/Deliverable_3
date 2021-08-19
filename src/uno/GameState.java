@@ -10,6 +10,7 @@ import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class GameState {
 	private static final String[] COLORS = {"red", "blue", "green", "yellow"};
 	private static final int COLOR_SIZE = 10;
@@ -24,7 +25,11 @@ public class GameState {
 	private int playersNum;
 	private int currPlayer;
 	private boolean skipAvailable;
-
+	
+/**
+ *Constructor fo The GameState Class
+ * @param n as an int 
+ */
 	public GameState(int n) {
 		playersNum = n;
 		deckLimit = COLORS.length * COLOR_SIZE;
@@ -52,11 +57,17 @@ public class GameState {
 		currPlayer = 0;
 		skipAvailable = true;
 	}
-
+ /**
+  *
+  * @return the onTable top card
+  */
 	public Card getDeckCard() {
 		return onTable.getTop();
 	}
-
+/**
+ *
+ * @return current Player
+  */
 	public int getCurrPlayer() {
 		return currPlayer;
 	}
@@ -104,7 +115,11 @@ public class GameState {
 		}
 		return false;
 	}
-
+/**
+ *
+ * @param player
+ * @return String
+ */
 	public String getPlayerOptions(int player) {
 		GroupOfCards playerHand = playerHands.get(player);
 		StringBuilder builder = new StringBuilder();
